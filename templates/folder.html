@@ -1,0 +1,26 @@
+<div class="col-lg-4 col-sm-1">
+    <a class="folder-url" href="{% url 'folder_detail' folder.id %}">
+        <div class="card border border-dark border-2">
+            <div class="card-body">
+                <div class="card-title">
+                    <span class="material-symbols-outlined">
+                        folder
+                    </span>
+                    <h5 class="text-truncate folder-card-title">{{ folder.name }}</h5>
+    
+                </div>
+                <div class="card-text">
+                    <p class="text-truncate">{{ folder.description }}</p>
+                    <p>
+                        作成日：{{ folder.created_at }} / 最終更新日：{{ folder.updated_at }} / 
+                        <div>
+                            <img class="rounded-circle user-icon" src="/media/{{ folder.created_by.icon }}" alt="{{ folder.created_by.username }}-icon">
+                            <b>{{ folder.created_by.nickname }}</b>
+                            @{{ folder.created_by.username }}
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>

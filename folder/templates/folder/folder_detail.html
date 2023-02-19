@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block extraheader %}
+    <link rel="stylesheet" href="{% static 'css/post.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block main %}
+    {% if object_list.count == 0 %}
+        <h5>このフォルダは空です……😔</h5>
+    {% else %}
+        <div>
+            <h1 style="display: inlineblock; margin-top: 1em">{{ object_list.1.folder.name }}
+                <a href="" target="_blank" class="btn btn-primary">フォルダをインポートする</a>
+            </h1>
+
+            <p>
+                {{ object_list.1.folder.description }}
+            </p>
+        </div>
+        <div class="row">
+            {% for post in object_list reversed %}
+                {% include 'post.html' with post=post %}
+            {% endfor %}
+        </div>
+
+        {% include 'pagination.html' %}
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+<div class="col-lg-4 col-sm-1">
+    <div class="card border border-dark border-2">
+        <div class="card-body">
+            <div class="card-title">
+                <span class="material-symbols-outlined">
+                    link
+                </span>
+                <h5 class="text-truncate post-card-title">{{ post.url }}</h5>
+    
+            </div>
+            <div class="card-text">
+                <p class="text-truncate">{{ post.description}}</p>
+                <p>
+                    <a href="{{ data.post.url }}" target="_blank" class="btn btn-primary text-truncate">このサイトを見る</a>
+                    <a class="btn btn-outline-success">
+                        <span class="material-symbols-outlined">bookmark</span>
+                    </a>
+                </p>
+                <p>
+                    {{ post.created_at }} / 
+                    <span>
+                        <img class="rounded-circle user-icon" src="/media/{{ post.created_by.icon }}" alt="{{ post.created_by.username }}-icon">
+                        <b>{{ post.created_by.nickname }}</b>
+                        @{{ post.created_by.username }}
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+

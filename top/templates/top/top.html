@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block extraheader %}
+    <link rel="stylesheet" href="{% static 'css/top.css' %}">
+    <link rel="stylesheet" href="{% static 'css/folder.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    {% for folder in object_list reversed %}
+        {% include 'folder.html' with folder=folder %}
+    {% endfor %}
+</div>
+
+{% include 'pagination.html' %}
+
+{% endblock %}

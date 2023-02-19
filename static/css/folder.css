@@ -1,0 +1,23 @@
+.folder-url {
+    display: block;
+    margin-top: 1em;
+    text-decoration: none;
+    color: black;
+}
+
+.folder-url .card .card-body {
+    padding-bottom: 0;
+}
+
+.folder-url .card:hover {
+    color: black;
+    background-color: #EEEEEE;
+}
+
+.user-icon {
+    width: 10%;
+}
+
+.folder-card-title {
+    display: inline;
+}
